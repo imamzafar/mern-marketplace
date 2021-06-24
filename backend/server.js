@@ -9,9 +9,12 @@ import orderRouter from "./routers/orderRouter.js";
 import uploadRouter from "./routers/uploadRouter.js";
 import dotenv from "dotenv";
 import chalk from "chalk";
+import cors from "cors";
+
 dotenv.config();
 
 const app = express();
+app.use(cors());
 app.use(bodyParser.json());
 mongoose
   .connect(config.MONGODB_URL, {
